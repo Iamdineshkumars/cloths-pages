@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+    body{
+    margin:0px;
+    padding:0px;
+ }
+#navbar{
+    border:1px solid black;
+    border-radius:3px;
+    height:60px;
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: darkslategrey;
+    position: sticky;
+    top:0px;
+}
+#navbar > #logo{
+
+    height:50px;
+    display:flex;
+    justify-content: flex-end;
+}
+ #navbar >#links {
+    
+    height:30px;
+    width:30%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#links a{
+    
+    text-decoration:none;
+    font-size: larger;
+    color:white;
+}
+#links a:hover{
+    color:lightsalmon
+}
+#navbar #cname{
+    color:white;
+    
+    padding:6px;
+    display:flex;
+    align-items:center
+}
+#navbar > #cart{
+    
+    width:100px;
+    height:40px;
+    display:flex;
+    align-items: center;
+}
+#cart img{
+    height: 40px;
+    width:auto;
+}
+</style>
+
+</head>
+<body>
+    <navbar id = "navbar">
+        <div id ="logo">
+        
+            <img src = "https://cdn.logojoy.com/wp-content/uploads/2018/05/30143419/95.png">
+        </div>
+        <div id ="links">
+         <a href="">Men</a>
+         <a href="">Women</a>
+         <a href="">login</a>
+         <a href="">Signup</a>
+    </div>
+    <div id ="cname"><h3>hello</h2></div>
+    <div id ="cart"><img src="https://cdn-icons-png.flaticon.com/128/6737/6737614.png"> <h2>0</h2></div>
+    </navbar>
+    <div id="container">
+        <button id ="btn">show items</button>
+    </div>
+</body>
+</html>
+<script>
+    cartarr= JSON.parse(localStorage.getItem("cartname1"))
+    document.querySelector("#cname").innerText= cartarr[cartarr.length-1];
+
+    let data = JSON.parse(localStorage.getItem("cartdata"))
+    
+  document.querySelector("#btn").addEventListener("click",function (){
+    showData(data)})
+  function showData(data){
+     let heading=document.createElement("h2")
+     heading.innerText = data
+     document.querySelector("#container").append(heading)
+
+  }
+    
+</script>

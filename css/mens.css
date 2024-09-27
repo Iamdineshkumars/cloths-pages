@@ -1,0 +1,29 @@
+body{
+    margin:0px;
+    padding: 0px;
+}
+#main{
+    margin-top: 10px;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-column: repeat(3,1fr);
+    row-gap: 10px;
+    column-gap: 20px;
+}
+.mens img{
+    width: 250px;
+    height:300px;
+    margin-left: 50px;
+}
+#main .mens{
+    padding:10px;
+    background-color:#ccc; 
+     transition: box-shadow 0.3s ease; 
+}
+#main .mens:hover{
+    box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5); 
+}
+.mens .cart_btn{
+    background-color: green;
+    color:white
+}

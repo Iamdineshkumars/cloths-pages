@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        body{
+            background-image: url("https://t3.ftcdn.net/jpg/08/18/46/36/240_F_818463642_JlpFcwDAoZuzjuH0SAmm2btpLZbTWJpb.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #container{
+            margin-left:600px;
+            margin-top:200px;
+            border:3px solid black;
+            border-radius: 4px;
+            width:300px;
+            height:290px;
+            padding:10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+           
+        }
+        #container h2{
+            text-align: center;
+        }
+        input[type=text],[type=password]{
+            width:300px;
+            height:25px;
+            border-radius: 5px;
+            background: transparent; 
+        }
+        button{
+            margin:10px;
+            margin-left:120px;
+        
+            background-color: aqua;
+            font-size: large;
+        }
+        
+    </style>
+</head>
+<body>
+    <navbar id = "navbar">
+        <div id ="links">
+         <a href="">Men</a>
+         <a href="">Women</a>
+         <a href="login.html">login</a>
+         <a href="signuppage.html">Signup</a>
+    </div>
+    </navbar>
+    <div id="container">
+        <h2>Login page</h2>
+        <div id="field">
+            <label for="uname"><b>Username</b></label><br/>
+            <input type="text" placeholder="Enter Username" id="uname" required>
+            <br/>
+            <p></p>
+            <label for="psw"><b>Password</b></label><br/>
+            <input type="password" placeholder="Enter Password" id="psw" required><br/>
+                
+            <button id="loginbtn">Login</button>
+            <button><a href="signuppage.html">signin</a></button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector("#loginbtn").addEventListener("click",enterToPage);
+    var cart = [];
+    function enterToPage(){
+        
+        let text1 = document.querySelector("#uname").value;
+        let text2 = document.querySelector("#psw").value;
+        let output = JSON.parse(localStorage.getItem("signin1"))
+        //console.log(output)
+       output.forEach(element => {
+         if (text1 === element.Username && text2 === element.password){
+            alert(element.Username)
+            cart.push(element.Username)
+            console.log(cart)
+            window.location.href = "menspage.html"
+            localStorage.setItem("cartname1",JSON.stringify(cart))
+            
+         }
+       /* else {
+            //alert("details not found")
+            window.location.href="signuppage.html"
+        }*/
+       });
+        }
+</script>

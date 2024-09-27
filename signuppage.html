@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup page</title>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        body{
+            background-image: url("https://media.istockphoto.com/id/1264890289/vector/financial-arrow-graphs.jpg?s=612x612&w=0&k=20&c=AxF8gDMkk9wz-zKHpPq8fIsgXfpPtwYjUELC1LOntTc=");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #form{
+            border:1px solid black;
+            margin:100px;
+            width:300px;
+            height:400px;
+            padding-left:90px;
+        }
+        #container > h2{
+           margin-left:40px;
+    
+            
+        }
+        input[type="text"],[type="email"],[type="number"],[type="password"]{
+            width: 250px;
+            height:25px;
+            border-radius:7px;
+            font-size:20px;
+            background-color:#0882bf;
+            
+        }
+        #btn{
+            margin-left:60px;
+            margin-top:50px;
+            padding:10px;
+        }
+        label{
+            color:white
+        }
+       #btn:hover{
+            width:100px;
+            background-color: #0882bf;
+        }
+    </style>
+</head>
+<body>
+    <navbar id = "navbar">
+        <div id ="links">
+         <a href="">Men</a>
+         <a href="">Women</a>
+         <a href="">login</a>
+         <a href="">Signup</a>
+    </div>
+    </navbar>
+    <div id="form">
+    <div id ="container">
+    <h2>Signup form</h3>
+        <label><b>Username</b></label><br/>
+        <input type="text" placeholder="Eneter your name" id="name" required><br/>
+        <p></p>
+        <label><b>Email</b></label><br/>
+        <input type="email" placeholder="@gmail.com" id="email" required><br/>
+        <p></p>
+        <label><b>contact number</b></label><br/>
+        <input type = "number"><br/>
+        <p></p>
+        <label><b>password</b></label><br/>
+        <input type="password" id =password><br/>
+
+        <button id="btn">SignIn</button>
+        
+    
+</div>
+</body>
+</html>
+<script>
+    document.querySelector("#btn").addEventListener("click",signInData);
+    var arr = JSON.parse(localStorage.getItem("signin1")) || [];
+    function signInData(){
+        //document.eventPreventDefault()
+        document.querySelectorAll("#form").innerText = "";
+        let object= {
+            Username : document.querySelector("#name").value,
+            Email : document.querySelector("#email").value,
+            password : document.querySelector("#password").value,
+        }
+        arr.push(object)
+        localStorage.setItem("signin1",JSON.stringify(arr))
+        window.location.href="login.html"
+    }
+</script>
