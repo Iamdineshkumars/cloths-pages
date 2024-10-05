@@ -1,36 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/index.css">
-    <style>
-        #styles{
-            height:400px;
-            width:100%
-        }
-        
-    </style>
-</head>
-<body>
-    <navbar id = "navbar">
-        <div id ="links">
-         <a href="">Home</a>
-         <a href="login.html">login</a>
-         <a href="signuppage.html">Signup</a>
-    </div>
-    </navbar>
-    <main>
-    </main>
-    <div id="matter">
-
-    </div>
-   
-</body>
-</html>
-<script>
-    var images =["https://img.freepik.com/free-photo/fashion-collection-design-shopping-graphic-words_53876-125567.jpg?size=626&ext=jpg&ga=GA1.1.2005001549.1724926083&semt=ais_hybrid",
+var images =["https://img.freepik.com/free-photo/fashion-collection-design-shopping-graphic-words_53876-125567.jpg?size=626&ext=jpg&ga=GA1.1.2005001549.1724926083&semt=ais_hybrid",
     "https://img.freepik.com/premium-photo/showcasing-tshirts-hanger-clothing-retailer-shop-online-shop-marketing_1039005-11893.jpg?size=626&ext=jpg&ga=GA1.1.2005001549.1724926083&semt=ais_hybrid",
     "https://img.freepik.com/free-vector/illustration-boutique-shop-logo-stamp-banner_53876-6869.jpg?size=626&ext=jpg&ga=GA1.1.2005001549.1724926083&semt=ais_hybrid",
     "https://img.freepik.com/premium-photo/black-t-shirt-with-price-tag_1235831-166421.jpg?size=626&ext=jpg&ga=GA1.1.2005001549.1724926083&semt=ais_hybrid",
@@ -55,5 +23,3 @@
      content.append(image,heading,para);
     },1000)
     
-    //content.append(heading)
-</script>
